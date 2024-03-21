@@ -1,7 +1,16 @@
 import Image from "next/image";
+import Hotjar from "@hotjar/browser";
+import { useEffect } from "react";
 
 export default function Home() {
 
+  useEffect(() => {
+    const siteId = 3904396;
+    const hotjarVersion = 6;
+
+    Hotjar.init(siteId, hotjarVersion);
+  }, []);
+  
   return (
     <div className={"h-screen w-screen flex flex-col bg-main-color py-5"}>
       <header className={"styles?.header"}>
