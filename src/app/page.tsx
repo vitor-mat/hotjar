@@ -1,6 +1,16 @@
+'use client'
 import Image from "next/image";
+import { useEffect } from 'react';
+import Hotjar from '@hotjar/browser';
+
+const siteId = 3904396;
+const hotjarVersion = 6;
 
 export default function Home() {
+
+  useEffect(() => {
+    Hotjar.init(siteId, hotjarVersion);
+  }, [Hotjar, siteId, hotjarVersion]);
 
   return (
     <div className={"h-screen w-screen flex flex-col bg-main-color py-5"}>
